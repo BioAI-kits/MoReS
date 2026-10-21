@@ -84,31 +84,6 @@ python -m pip check
 
 Dependencies use minimum-version constraints; major library versions are recorded for training runs.
 
-## Quick start
-
-Run the examples from the repository root. Commands use macOS / Linux shell syntax; on Windows, combine multiline commands into a single line. Replace `/path/to/...` with actual paths and retain quotes around paths containing spaces. Relative paths are resolved from the working directory.
-
-This example uses synthetic data and a reduced configuration to exercise the workflow. Its outputs are not scientific results.
-
-```bash
-# 1. Generate 512 synthetic patients with 6 features per molecular modality
-python main.py make-demo --patients 512 --features 6 --seed 7 --output runs/quickstart-data
-
-# 2. Inspect patient counts, feature counts, and modality availability
-python main.py audit --data runs/quickstart-data
-
-# 3. Run a small nested cross-validation workflow
-python main.py cv --data runs/quickstart-data --config configs/smoke.json --output runs/quickstart-cv
-
-# 4. Train and save a model
-python main.py train --data runs/quickstart-data --config configs/smoke.json --output runs/quickstart-model
-
-# 5. Load the saved model and generate predictions
-python main.py predict --data runs/quickstart-data --model runs/quickstart-model/model.joblib --times 0 6 12 24 36 60 --output runs/quickstart-predictions
-```
-
-Step 5 uses the training data to demonstrate prediction. Use the out-of-fold (OOF) predictions from step 3 to assess internal generalization. Commands that create output directories require a new directory; choose a different `--output` path when repeating a run.
-
 ## Data preparation
 
 ### Clinical outcomes and covariates
@@ -330,7 +305,7 @@ Some implementation details are explicit repository choices where the manuscript
 | Integration | Gauss–Legendre quadrature segmented at monthly, hazard, event, and censoring boundaries. Curve distance uses a separate outcome-independent integration grid. |
 | Concordance | `ipcw_cindex` uses conditional censoring weights. Marginal Uno concordance uses a separate reverse Kaplan–Meier estimate; the two are reported separately. |
 
-All preprocessing and model selection remain inside the relevant training partitions, including network tuning, stacking, gain cross-fitting, and fusion selection. The `smoke.json` settings reduce computation for the quick-start example and are not an analysis protocol.
+All preprocessing and model selection remain inside the relevant training partitions, including network tuning, stacking, gain cross-fitting, and fusion selection. The `smoke.json` settings reduce computation and are not an analysis protocol.
 
 ## Outputs
 
