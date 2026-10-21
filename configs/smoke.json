@@ -1,0 +1,58 @@
+{
+  "cuts": [
+    0,
+    6,
+    12,
+    24,
+    36,
+    60
+  ],
+  "seed": 20261020,
+  "device": "cpu",
+  "threads": 1,
+  "outer_folds": 2,
+  "repeats": 1,
+  "inner_folds": 2,
+  "gain_folds": 2,
+  "stack_folds": 2,
+  "selection_folds": 2,
+  "ensemble_members": 1,
+  "bootstrap_replicates": 5,
+  "top_features": 4,
+  "max_candidates": null,
+  "cox_alphas": [
+    0.01,
+    0.1
+  ],
+  "ridge_alphas": [
+    0.1,
+    1.0
+  ],
+  "kappa_grid": [
+    0.0,
+    0.7
+  ],
+  "eta_grid": [
+    0.001
+  ],
+  "search_trials": 1,
+  "learning_rate": 0.0005,
+  "batch_size": 64,
+  "hidden_dim": 8,
+  "dropout": 0.2,
+  "weight_decay": 0.0001,
+  "max_epochs": 2,
+  "patience": 1,
+  "early_stop_fraction": 0.2,
+  "stack_l2": 0.01,
+  "censoring": "km",
+  "censor_alpha": 1.0,
+  "g_floor": 0.025,
+  "support_g": 0.001,
+  "min_at_risk": 1,
+  "integration_order": 2,
+  "augmentation_beta": 0.25,
+  "augmentation_severity": 0.15,
+  "gain_augmentations": 1,
+  "rna_scale": "log2p1"
+}
