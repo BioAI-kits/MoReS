@@ -1,12 +1,6 @@
 # MoReS
 
-## Abstract
-
-**Background** Multi-omics integration can improve survival prediction in bladder cancer, but the benefits of joint models may be limited when sample sizes are small or inputs are incomplete or perturbed. We developed MoReS to estimate the predictive gain of joint modeling for each patient and adjust the degree of fusion while accounting for censoring and estimation uncertainty.
-
-**Results** MoReS comprises two pathways: a reference pathway that aggregates independent survival predictions from four omics experts and a clinical expert, and a joint pathway that models cross-omics interactions. Patient-level cross-fitting and inverse probability of censoring weighting are used to construct targets for estimating conditional directional gains. Robust shrinkage based on uncertainty in gain estimates determines patient-specific fusion weights. In evaluations of 381 patients with bladder cancer, MoReS achieved a 60-month integrated Brier score of 0.1996 ± 0.0021. Mean paired relative reductions were 4.21% versus the reference pathway and 5.72% versus the joint pathway. The 60-month time-dependent area under the receiver operating characteristic curve was 0.701 ± 0.012. High-risk patients had poorer survival than low-risk patients, with an unadjusted hazard ratio of 2.59 (95% confidence interval, 1.86–3.60). Compared with fusion without shrinkage, MoReS maintained similar overall prediction error while showing improved stability under controlled perturbations and lower integrated excess squared error in four analytical benchmark settings. In additional analyses, the RNA prediction component was evaluated in independent bladder cancer cohorts with restricted molecular inputs, while within-cancer retraining in TCGA-BRCA, TCGA-KIRC and TCGA-LUAD demonstrated predictive improvements in selected comparisons.
-
-**Conclusions** MoReS adaptively determines the fusion weights of reference and joint predictions based on patient-level predictive gains and their estimation stability, improving survival prediction while increasing robustness to input perturbations. These findings support using the expected benefits of joint modeling and their uncertainty to guide multi-omics fusion, providing a new modeling approach for individualized survival prediction.
+Multi-omics integration can improve survival prediction in bladder cancer, but the benefits of joint models may be limited when sample sizes are small or inputs are incomplete or perturbed. We developed MoReS to estimate the predictive gain of joint modeling for each patient and adjust the degree of fusion while accounting for censoring and estimation uncertainty.
 
 ## Data availability
 
